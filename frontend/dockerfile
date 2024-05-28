@@ -1,0 +1,52 @@
+# # Use an official Flutter Docker image as a base
+# # FROM cirrusci/flutter:stable AS builder
+# FROM therdm/flutter_ubuntu_arm:latest AS builder
+
+# # Set the working directory in the container
+# WORKDIR /app
+
+# # Copy the pubspec.yaml and pubspec.lock files to the container
+# COPY pubspec.yaml pubspec.lock ./
+
+# # Get dependencies (including git and ssh) and cache them
+# RUN flutter pub get
+
+# # Copy the entire project to the container
+# COPY . .
+
+# # Build the Flutter app for release
+# RUN flutter build apk --release
+
+# # Create a minimal production image
+# FROM openjdk:8-jre-slim
+
+# # Set the working directory in the container
+# WORKDIR /app
+
+# # Copy the built APK from the previous stage
+# COPY --from=builder /app/build/app/outputs/flutter-apk/app-release.apk .
+
+# # Expose the port the app runs on
+# EXPOSE 8080
+
+# # Command to run the Flutter app
+# CMD ["java", "-jar", "app-release.apk"]
+
+
+
+# Stage 1 - Install dependencies and build the app
+FROM therdm/flutter_ubuntu_arm:latest AS builder
+
+# Copy files to container and build
+RUN mkdir /app
+COPY . /app
+WORKDIR /app
+RUN flutter pub get
+RUN flutter build ios -f
+
+# Stage 2 - Create the run-time image
+FROM nginx:stable-alpine AS runner
+
+COPY default.conf /etc/nginx/conf.d
+# COPY package.json /usr/share/nginx/html
+COPY --from=builder /app/build/web /usr/share/nginx/html

@@ -1,0 +1,7 @@
+myenv/
+path/
+movies.csv
+
+# Pickle files
+cosine_sim.pkl
+indices.pkl
