@@ -48,6 +48,10 @@ Collaborative Filtering recommends items based on past behavior and user similar
 
 In this project, we focus on Memory-Based Collaborative Filtering.
 
+## Demo
+
+[![Watch the video](https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg)](https://www.youtube.com/shorts/jLxwnvQoBB8)
+
 ## Project Structure
 
 - **Data Processing Notebook**: Steps to convert original data files into CSV format.
