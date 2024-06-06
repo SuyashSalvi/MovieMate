@@ -50,7 +50,7 @@ In this project, we focus on Memory-Based Collaborative Filtering.
 
 ## Demo
 
-[![Watch the video](<img width="355" alt="image" src="https://github.com/SuyashSalvi/MovieMate/assets/40499151/a3fa7949-5a5f-409a-956d-f2c7f9d75073">)](https://www.youtube.com/shorts/U0IJWWiXsU4)
+[![Watch the video](<img width="355" alt="image" src="https://github.com/SuyashSalvi/MovieMate/assets/40499151/a3fa7949-5a5f-409a-956d-f2c7f9d75073">)]([https://www.youtube.com/shorts/U0IJWWiXsU4](https://www.youtube.com/watch?v=VjnBUG9xtFQ))
 
 ## Project Structure
 
