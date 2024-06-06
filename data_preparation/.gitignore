@@ -1,0 +1,8 @@
+myenv/
+movies.csv
+ratings.csv
+users.csv
+
+# Pickle files
+cosine_sim.pkl
+indices.pkl
